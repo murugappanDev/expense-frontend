@@ -95,12 +95,12 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ expenses }) => {
   return (
     <div className="analytics-container">
       {/* Top Banner / Summary */}
-      <div className="analytics-header-banner glass-card">
+      <div className="analytics-header-banner surface-card">
         <div>
-          <span className="badge-highlight positive">
+          <span className="badge-highlight neutral">
             <PieChartIcon size={14} /> Aggregation Analytics
           </span>
-          <h2 className="banner-title">Maternal Financial Health & Milestone Breakdown</h2>
+          <h2 className="banner-title">Maternal Healthcare Financial Overview</h2>
           <p className="banner-desc">
             Visualizing backend aggregation facets: category totals, trimester distribution, and payment channel analytics.
           </p>
@@ -114,7 +114,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ expenses }) => {
       {/* Grid: Trimester Breakdown & Milestone Roadmap */}
       <div className="analytics-grid-2">
         {/* Trimester Facet Result */}
-        <div className="glass-card analytics-card">
+        <div className="surface-card analytics-card">
           <div className="card-header-styled">
             <div className="icon-wrap-pink">
               <SparklesIcon size={18} />
@@ -189,7 +189,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ expenses }) => {
         </div>
 
         {/* Payment Methods Facet Result */}
-        <div className="glass-card analytics-card">
+        <div className="surface-card analytics-card">
           <div className="card-header-styled">
             <div className="icon-wrap-emerald">
               <ShieldCheckIcon size={18} />
@@ -227,7 +227,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ expenses }) => {
       </div>
 
       {/* Category Breakdown ($facet.categoryResult) */}
-      <div className="glass-card analytics-card mt-6">
+      <div className="surface-card analytics-card mt-6">
         <div className="card-header-styled">
           <div className="icon-wrap-purple">
             <BabyIcon size={18} />

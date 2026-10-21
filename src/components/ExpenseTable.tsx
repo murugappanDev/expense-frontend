@@ -93,80 +93,85 @@ export const ExpenseTable: React.FC<ExpenseTableProps> = ({
   };
 
   return (
-    <section className="glass-card table-section">
+    <section className="surface-card table-section">
       {/* Table Section Header & Filter Toolbar */}
       <div className="table-toolbar">
         <div className="search-box">
-          <SearchIcon size={18} className="search-icon" />
+          <SearchIcon size={16} className="search-icon" />
           <input
             type="text"
             className="search-input"
-            placeholder="Search by expense, scan, doctor or medicine..."
+            placeholder="Search expenses, doctors, prescriptions, tests..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           {searchTerm && (
             <button className="clear-search-btn" onClick={() => setSearchTerm("")}>
-              ✕
+              Clear
             </button>
           )}
         </div>
 
         <div className="filters-row">
           {/* Trimester Filter */}
-          <div className="filter-select-wrap">
-            <span className="filter-label">Trimester:</span>
-            <select
-              className="form-select filter-select"
-              value={selectedTrimester}
-              onChange={(e) => setSelectedTrimester(e.target.value)}
-            >
-              <option value="All">All Trimesters</option>
-              <option value="First">1st Trimester</option>
-              <option value="Second">2nd Trimester</option>
-              <option value="Third">3rd Trimester</option>
-            </select>
-          </div>
+          <select
+            className="form-select filter-select"
+            value={selectedTrimester}
+            onChange={(e) => setSelectedTrimester(e.target.value)}
+          >
+            <option value="All">All Trimesters</option>
+            <option value="First">1st Trimester</option>
+            <option value="Second">2nd Trimester</option>
+            <option value="Third">3rd Trimester</option>
+          </select>
 
           {/* Category Filter */}
-          <div className="filter-select-wrap">
-            <span className="filter-label">Category:</span>
-            <select
-              className="form-select filter-select"
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-            >
-              <option value="All">All Categories</option>
-              <option value="Consultation">Consultation</option>
-              <option value="Medicines">Medicines</option>
-              <option value="Supplements">Supplements</option>
-              <option value="Lab Tests">Lab Tests</option>
-              <option value="Nutrition">Nutrition</option>
-              <option value="Delivery">Delivery</option>
-              <option value="Baby Essentials">Baby Essentials</option>
-              <option value="Travel">Travel</option>
-              <option value="Insurance">Insurance</option>
-              <option value="Others">Others</option>
-            </select>
-          </div>
+          <select
+            className="form-select filter-select"
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+          >
+            <option value="All">All Categories</option>
+            <option value="Consultation">Consultation</option>
+            <option value="Medicines">Medicines</option>
+            <option value="Supplements">Supplements</option>
+            <option value="Lab Tests">Lab Tests</option>
+            <option value="Nutrition">Nutrition</option>
+            <option value="Delivery">Delivery</option>
+            <option value="Baby Essentials">Baby Essentials</option>
+            <option value="Travel">Travel</option>
+            <option value="Insurance">Insurance</option>
+            <option value="Others">Others</option>
+          </select>
 
           {/* Payment Method Filter */}
-          <div className="filter-select-wrap">
-            <span className="filter-label">Payment:</span>
-            <select
-              className="form-select filter-select"
-              value={selectedPayment}
-              onChange={(e) => setSelectedPayment(e.target.value)}
+          <select
+            className="form-select filter-select"
+            value={selectedPayment}
+            onChange={(e) => setSelectedPayment(e.target.value)}
+          >
+            <option value="All">All Payments</option>
+            <option value="UPI">UPI</option>
+            <option value="Credit Card">Credit Card</option>
+            <option value="Debit Card">Debit Card</option>
+            <option value="Cash">Cash</option>
+            <option value="Insurance">Insurance</option>
+            <option value="Other">Other</option>
+          </select>
+
+          {(selectedCategory !== "All" || selectedTrimester !== "All" || selectedPayment !== "All" || searchTerm) && (
+            <button
+              className="btn btn-ghost btn-sm"
+              onClick={() => {
+                setSelectedCategory("All");
+                setSelectedTrimester("All");
+                setSelectedPayment("All");
+                setSearchTerm("");
+              }}
             >
-              <option value="All">All Payments</option>
-              <option value="UPI">UPI</option>
-              <option value="Credit Card">Credit Card</option>
-              <option value="Debit Card">Debit Card</option>
-              <option value="Cash">Cash</option>
-              <option value="Insurance">Insurance</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
+              Reset
+            </button>
+          )}
         </div>
       </div>
 

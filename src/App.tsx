@@ -201,11 +201,35 @@ export function App() {
 
       {/* Main Content Area */}
       <main className="main-content">
+        {/* Page Intro Header */}
+        <div className="page-intro">
+          <div>
+            <h1 className="page-title">
+              {activeTab === "dashboard" && "Healthcare & Maternity Finances"}
+              {activeTab === "expenses" && "Medical & Expense Records"}
+              {activeTab === "analytics" && "Financial Analytics & Insights"}
+            </h1>
+            <p className="page-desc">
+              {activeTab === "dashboard" && "Track prenatal consultations, lab diagnostics, medicines, and delivery milestones."}
+              {activeTab === "expenses" && "Search, filter, and inspect detailed receipts and doctor prescriptions."}
+              {activeTab === "analytics" && "Breakdown of expenditure across trimesters, medical categories, and payment channels."}
+            </p>
+          </div>
+          <div style={{ display: "flex", gap: "0.5rem" }}>
+            <button className="btn btn-secondary" onClick={() => setIsAuthModalOpen(true)}>
+              Family Account
+            </button>
+            <button className="btn btn-primary" onClick={handleOpenAddModal}>
+              + New Expense
+            </button>
+          </div>
+        </div>
+
         {/* Render Tab Views */}
         {activeTab === "dashboard" && (
           <>
             {/* Stat Cards Overview */}
-            <StatCards expenses={expenses} onOpenAddModal={handleOpenAddModal} />
+            <StatCards expenses={expenses} />
 
             {/* Expenses Management Table */}
             <ExpenseTable

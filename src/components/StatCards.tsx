@@ -41,45 +41,44 @@ export const StatCards: React.FC<StatCardsProps> = ({ expenses }) => {
   return (
     <section className="stat-cards-grid">
       {/* Total Tracked Expense */}
-      <div className="glass-card stat-card glow-rose">
+      <div className="surface-card stat-card">
         <div className="stat-card-header">
-          <span className="stat-label">Total Pregnancy Spend</span>
-          <div className="stat-icon-badge bg-rose">
-            <TrendingUpIcon size={20} />
+          <span className="stat-label">Total Spend</span>
+          <div className="stat-icon-badge">
+            <TrendingUpIcon size={16} />
           </div>
         </div>
         <div className="stat-value tabular-nums">{formatCurrency(totalAmount)}</div>
         <div className="stat-subtext">
-          <span className="badge-highlight positive">
-            <SparklesIcon size={13} />
-            {expenses.length} Records
+          <span className="badge-highlight neutral">
+            {expenses.length} Entries
           </span>
-          <span>across all maternity phases</span>
+          <span>Documented</span>
         </div>
         <div className="progress-bar-track">
-          <div className="progress-bar-fill" style={{ width: "72%" }}></div>
+          <div className="progress-bar-fill" style={{ width: "100%" }}></div>
         </div>
       </div>
 
       {/* Trimester Milestone Breakdown */}
-      <div className="glass-card stat-card glow-purple">
+      <div className="surface-card stat-card">
         <div className="stat-card-header">
-          <span className="stat-label">Trimester Breakdown</span>
-          <div className="stat-icon-badge bg-purple">
-            <SparklesIcon size={20} />
+          <span className="stat-label">Trimester Allocation</span>
+          <div className="stat-icon-badge">
+            <SparklesIcon size={16} />
           </div>
         </div>
         <div className="trimester-metrics-row">
           <div className="tri-metric-item">
-            <span className="tri-tag tri-first">1st Tri</span>
+            <span className="tri-tag">T1</span>
             <span className="tri-amount tabular-nums">{formatCurrency(tri1Total)}</span>
           </div>
           <div className="tri-metric-item">
-            <span className="tri-tag tri-second">2nd Tri</span>
+            <span className="tri-tag">T2</span>
             <span className="tri-amount tabular-nums">{formatCurrency(tri2Total)}</span>
           </div>
           <div className="tri-metric-item">
-            <span className="tri-tag tri-third">3rd Tri</span>
+            <span className="tri-tag">T3</span>
             <span className="tri-amount tabular-nums">{formatCurrency(tri3Total)}</span>
           </div>
         </div>
@@ -103,32 +102,32 @@ export const StatCards: React.FC<StatCardsProps> = ({ expenses }) => {
       </div>
 
       {/* Insurance & Claims */}
-      <div className="glass-card stat-card glow-emerald">
+      <div className="surface-card stat-card">
         <div className="stat-card-header">
-          <span className="stat-label">Insurance / Claims</span>
-          <div className="stat-icon-badge bg-emerald">
-            <ShieldCheckIcon size={20} />
+          <span className="stat-label">Insurance Covered</span>
+          <div className="stat-icon-badge">
+            <ShieldCheckIcon size={16} />
           </div>
         </div>
         <div className="stat-value tabular-nums">{formatCurrency(insuranceTotal)}</div>
         <div className="stat-subtext">
-          <span className="badge-highlight neutral">{insuranceExpenses.length} Claims Tagged</span>
-          <span>Cashless & Reimbursements</span>
+          <span className="badge-highlight positive">{insuranceExpenses.length} Claims</span>
+          <span>Filed with TPA</span>
         </div>
       </div>
 
       {/* Receipts & Medical Reports */}
-      <div className="glass-card stat-card glow-blue">
+      <div className="surface-card stat-card">
         <div className="stat-card-header">
-          <span className="stat-label">Invoices & Prescriptions</span>
-          <div className="stat-icon-badge bg-blue">
-            <FileTextIcon size={20} />
+          <span className="stat-label">Attached Invoices</span>
+          <div className="stat-icon-badge">
+            <FileTextIcon size={16} />
           </div>
         </div>
         <div className="stat-value tabular-nums">{totalBills}</div>
         <div className="stat-subtext">
-          <span className="badge-highlight positive">Backed with Bills</span>
-          <span>Ultrasounds & Lab Invoices</span>
+          <span className="badge-highlight neutral">Verified Docs</span>
+          <span>Prescriptions & Scans</span>
         </div>
       </div>
     </section>

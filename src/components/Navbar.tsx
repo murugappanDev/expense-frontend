@@ -24,11 +24,11 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Brand Logo */}
         <div className="brand-wrapper" onClick={() => setActiveTab("dashboard")}>
           <div className="brand-icon-box">
-            <HeartIcon size={22} className="heart-pulse" />
+            <HeartIcon size={18} />
           </div>
           <div className="brand-text">
             <span className="brand-title">BloomCare</span>
-            <span className="brand-subtitle">Maternal & Pregnancy Expense Tracker</span>
+            <span className="brand-subtitle">Healthcare Finance</span>
           </div>
         </div>
 
